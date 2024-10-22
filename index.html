@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .result hr {
+            border: none;
+            height: 1px;
+        }
+
+        input[type="number"]:focus::placeholder {
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="h-screen w-full">
+    <div class="main flex flex-col md:flex-row w-full h-screen bg-white">
+        <!-- Left side calculator section -->
+        <div class="calc w-full md:w-1/2 h-full bg-white flex flex-col justify-start">
+            <div class="head flex justify-center flex-col items-start md:justify-between md:flex-row md:mb-10">
+                <h2 class="ml-5 mt-5 font-semibold text-xl">Mortgage Calculator</h2>
+                <button
+                    class="clearBtn ml-5 md:mr-5 md:mt-5 mb-5 md:mb-0 text-gray-400 text-sm underline hover:text-gray-500">Clear
+                    All</button>
+            </div>
+            <div class="inputs flex flex-col">
+                <label for="mortgage" class="text-xs text-gray-400 ml-6 mt-4">Mortgage Amount</label>
+                <input class="outline-none border-slate-300 border w-10/12 h-10 rounded-md mb-6 ml-6 mt-1 p-2"
+                    type="number" id="mortgage" placeholder="$">
+                <label for="term" class="text-xs text-gray-400 ml-6 mt-4">Mortgage Term</label>
+                <input class="outline-none border-slate-300 border w-10/12 h-10 rounded-md mb-6 ml-6 mt-1 p-2"
+                    type="number" id="term" placeholder="Years">
+                <label for="rate" class="text-xs text-gray-400 ml-6 mt-4">monthly Interest Rate</label>
+                <input class="outline-none border-slate-300 border w-10/12 h-10 rounded-md mb-6 ml-6 mt-1 p-2"
+                    type="number" id="rate" placeholder="%">
+
+                <div class="mortgage-type w-10/12 mx-auto my-4">
+                    <p class="text-gray-400 text-xs mb-2">Mortgage Type</p>
+
+                    <!-- Radio options -->
+                    <label
+                        class="flex items-center p-3 border rounded-lg cursor-pointer duration-300 mb-3 hover:bg-yellow-100">
+                        <input type="radio" name="mortgageType" value="repayment" class="mr-3">
+                        <span class="font-semibold text-gray-700">Repayment</span>
+                    </label>
+
+                    <label
+                        class="flex items-center p-3 border rounded-lg cursor-pointer duration-300 hover:bg-yellow-100">
+                        <input type="radio" name="mortgageType" value="interest" class="mr-3">
+                        <span class="font-semibold text-gray-700">Interest Only</span>
+                    </label>
+                </div>
+
+                <button
+                    class="calc-btn bg-yellow-300 md:mt-12 hover:bg-yellow-500 w-10/12 h-14 rounded-full duration-300 text-lg font-semibold mt-4 mb-6 m-auto">
+                    <i class="fa-solid fa-calculator text-black pr-2"></i> Calculate Repayments
+                </button>
+            </div>
+        </div>
+
+        <!-- Right side result section -->
+        <div
+            class="result bg-slate-700 text-white w-full md:w-1/2 h-full flex justify-center items-center md:items-start flex-col md:rounded-bl-3xl">
+            <div class="no-result md:ml-36 flex flex-col justify-center items-center">
+                <img class="w-7/12 md:w-4/12 mt-5 md:mt-0" src="imgs/illustration-empty.svg" alt="">
+                <h2 class="text-2xl font-bold my-4">Result shown here</h2>
+                <p class="text-slate-400 text-center w-8/12 mb-6">Complete the form and click "Calculate Repayments" to
+                    see what your monthly repayments will be.</p>
+            </div>
+            <!-- <h2 class="text-xl md:text-3xl m-6 font-semibold md:ml-14">Your Results</h2>
+            <p class="text-slate-400 m-5 text-lg leading-8 md:max-w-96 md:ml-14">Lorem ipsum dolor sit amet
+                consectetur
+                adipisicing elit. Id
+                reprehenderit,
+                dolores
+                ipsa eum praesentium
+                saepe debitis harum amet illum earum odio ex quod perferendis?</p>
+            <div
+                class="main-result border-t border-solid border-t-yellow-300 bg-slate-800 mx-auto w-10/12 h-fit rounded-lg md:rounded-bl-xl md:mt-16 mb-7 md:mb-20 pb-5 md:pb-16">
+                <p class="text-slate-400 m-5 md:my-5 md:mt-8 text-base">Your monthly repayments</p>
+                <span class=" text-yellow-300 font-bold text-5xl m-4 md:mb-5">$1785.75</span>
+                <hr class="mt-5 border-solid bg-slate-400 rounded-lg md:w-11/12 md:mt-5 mx-auto">
+                <p class="text-slate-400 m-5 text-base md:mt-9 md:mb-7">Total you'll repay over the term</p>
+                <span class="font-semibold text-3xl m-4 md:mt-9">$543,343.34</span>
+            </div> -->
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
